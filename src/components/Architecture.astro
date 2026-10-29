@@ -1,0 +1,122 @@
+---
+import type { Locale } from "../data/profile";
+import { copy } from "../data/copy";
+interface Props {
+  lang: Locale;
+}
+const { lang } = Astro.props;
+const t = copy[lang];
+---
+
+<div class="architecture" aria-label={t.diagram}>
+  <div class="diagram-top">
+    <span class="mono">SC / PLATFORM MAP</span>
+    <span class="diagram-index mono" aria-hidden="true">
+      FIG. 001
+    </span>
+  </div>
+  <div class="architecture-body">
+    <div class="cloud-label mono">
+      <span class="status-dot"></span> AWS / AZURE / GCP
+    </div>
+    <div class="platform-map">
+      <svg
+        class="map-lines"
+        viewBox="0 0 500 380"
+        fill="none"
+        aria-hidden="true"
+      >
+        <path d="M110 70H390M250 70V140M110 200H390M250 200V290M110 320H390" />
+        <path class="flow" d="M250 70V320" />
+        <circle cx="250" cy="70" r="4" />
+        <circle cx="250" cy="200" r="4" />
+        <circle cx="250" cy="320" r="4" />
+      </svg>
+      <div class="map-row">
+        <button class="map-node" data-layer="0" aria-pressed="true">
+          <span class="node-symbol" aria-hidden="true">
+            ◇
+          </span>
+          <span>
+            Terraform<span class="node-small">{t.layers[0][0]}</span>
+          </span>
+        </button>
+        <button class="map-node" data-layer="1" aria-pressed="false">
+          <span class="node-symbol" aria-hidden="true">
+            ↻
+          </span>
+          <span>
+            Argo CD<span class="node-small">{t.layers[1][0]}</span>
+          </span>
+        </button>
+      </div>
+      <div class="cluster">
+        <span class="cluster-title mono">KUBERNETES</span>
+        <button class="runtime-node" data-layer="2" aria-pressed="false">
+          <svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
+            <path d="m40 4 28 14 7 31-19 25H24L5 49l7-31Z" />
+            <circle cx="40" cy="40" r="17" />
+            <path d="M40 14v52M15 33l50 14M20 58l40-36M15 47l50-14M20 22l40 36" />
+          </svg>
+          <span>
+            {t.layers[2][0]}
+            <small>{t.diagramLabels[2]}</small>
+          </span>
+          <span class="pods" aria-hidden="true">
+            <i></i>
+            <i></i>
+            <i></i>
+          </span>
+        </button>
+      </div>
+      <button class="observe-node" data-layer="3" aria-pressed="false">
+        <span class="signal" aria-hidden="true">
+          ▂▅▃▇▅
+        </span>
+        <span>
+          Prometheus / Grafana<small>{t.layers[3][0]}</small>
+        </span>
+        <span aria-hidden="true">↗</span>
+      </button>
+    </div>
+    <div class="map-detail" aria-live="polite">
+      <span class="detail-number mono" aria-hidden="true">
+        01 /
+      </span>
+      <div>
+        {t.layers.map((layer, i) => (
+          <p data-layer-description={i} hidden={i !== 0}>
+            {layer[1]}
+          </p>
+        ))}
+      </div>
+    </div>
+  </div>
+  <div class="diagram-bottom mono">
+    <span>{t.illustration}</span>
+    <span aria-hidden="true">↗</span>
+  </div>
+</div>
+<script>
+  document.querySelectorAll<HTMLElement>(".architecture").forEach((map) => {
+    map.querySelectorAll<HTMLButtonElement>("[data-layer]").forEach((button) =>
+      button.addEventListener("click", () => {
+        map
+          .querySelectorAll("[data-layer]")
+          .forEach((node) =>
+            node.setAttribute("aria-pressed", String(node === button)),
+          );
+        map
+          .querySelectorAll<HTMLElement>("[data-layer-description]")
+          .forEach(
+            (description) =>
+              (description.hidden =
+                description.dataset.layerDescription !== button.dataset.layer),
+          );
+        const number = map.querySelector(".detail-number");
+        if (number)
+          number.textContent = `0${Number(button.dataset.layer) + 1} /`;
+      }),
+    );
+  });
+</script>
