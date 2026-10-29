@@ -54,3 +54,13 @@ En Chrome se revisa el hero en escritorio y 390 × 844; se comprueba ausencia de
 ## Ajustes de usabilidad y Combat Lab
 
 Se elimina el resaltado estático de GitOps, se amplía de 10 a 14 px el texto explicativo del diagrama y se retiran las flechas y el desplazamiento hover de las seis tarjetas informativas. Se añade Combat Lab mediante datos bilingües en `personalProjects`, con estado en desarrollo y enlaces a la preview y WoAS. Tipos, lint, build y validación de enlaces internos correctos. En Chrome se comprueban los estilos iguales de las cinco etiquetas, ausencia de flechas, tamaño efectivo de 14 px y cambio de descripción al pulsar Argo CD. Las auditorías Lighthouse anteriores corresponden al diseño previo a esta incorporación; no se han repetido para este cambio.
+
+## Publicación en GitHub Pages
+
+Sergio autoriza expresamente la publicación el 29 de octubre de 2026. Se crea el repositorio público https://github.com/SergioCorne/SergioCorne.github.io y se sube la versión aprobada a `main` (commit inicial `b01c8e7`). Pages queda configurado con `build_type: workflow` y HTTPS obligatorio.
+
+Primera ejecución correcta: https://github.com/SergioCorne/SergioCorne.github.io/actions/runs/40849543634. Pasan instalación, tipos, lint, formato, build, validación de salida y despliegue.
+
+Verificación real en Chrome de https://sergiocorne.github.io/ y https://sergiocorne.github.io/es/: diseño y contenido correctos, cambio de idioma, Combat Lab marcado en desarrollo, menú móvil y selección del diagrama mediante teclado. Consola sin errores ni advertencias en la consulta realizada. HTTP 200 en ambas rutas, CSS, fuentes referenciadas, robots, sitemaps, favicon y tarjeta Open Graph. Captura en `reports/published-desktop.jpg` (no versionada). Las anteriores menciones de publicación pendiente describen las fases previas a la autorización.
+
+Los avisos de GitHub sobre el runtime Node 20 de algunas acciones no impidieron el despliegue; el proyecto usa Node 24 para las comprobaciones y el build.
