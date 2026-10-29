@@ -453,6 +453,25 @@ const schema = {
                 {t.linkedin}
                 <span aria-hidden="true">↗</span>
               </a>
+              {profile.cv && (
+                <a
+                  class="button outlined contact-cv"
+                  href={profile.cv}
+                  download="CV_Sergio_Cornejo.pdf"
+                >
+                  {t.downloadCv}
+                  <span aria-hidden="true">↓</span>
+                </a>
+              )}
+              {profile.email && (
+                <a
+                  class="contact-email text-link"
+                  href={`mailto:${profile.email}`}
+                >
+                  {profile.email}
+                  <span aria-hidden="true">↗</span>
+                </a>
+              )}
               <a class="text-link github-contact" href={profile.github}>
                 {t.github}
                 <span aria-hidden="true">↗</span>

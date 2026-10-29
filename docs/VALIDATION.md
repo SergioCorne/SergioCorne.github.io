@@ -64,3 +64,7 @@ Primera ejecución correcta: https://github.com/SergioCorne/SergioCorne.github.i
 Verificación real en Chrome de https://sergiocorne.github.io/ y https://sergiocorne.github.io/es/: diseño y contenido correctos, cambio de idioma, Combat Lab marcado en desarrollo, menú móvil y selección del diagrama mediante teclado. Consola sin errores ni advertencias en la consulta realizada. HTTP 200 en ambas rutas, CSS, fuentes referenciadas, robots, sitemaps, favicon y tarjeta Open Graph. Captura en `reports/published-desktop.jpg` (no versionada). Las anteriores menciones de publicación pendiente describen las fases previas a la autorización.
 
 Los avisos de GitHub sobre el runtime Node 20 de algunas acciones no impidieron el despliegue; el proyecto usa Node 24 para las comprobaciones y el build.
+
+## Contacto y CV
+
+Sergio facilita y autoriza el email público `sergiocp0708@gmail.com` y su CV para la sección de contacto. Se retira «Pendiente» del README, se añade el enlace mailto y la descarga bilingüe del archivo `public/CV_Sergio_Cornejo.pdf`. El PDF original se conserva sin modificaciones; se comprueba su apertura y se revisan visualmente sus dos páginas. Tipos, lint, build y enlaces locales correctos. Revisados el enlace mailto y el atributo download en Chrome.

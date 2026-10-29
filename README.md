@@ -60,7 +60,7 @@ Para formatear: `npx prettier --write .`. Para regenerar la tarjeta Open Graph: 
 - Proyectos personales: añadir entradas a `personalProjects` en `src/data/profile.ts`, incluyendo textos en ambos idiomas, estado, equipo, enlaces y contexto verificados. Las tarjetas se generan automáticamente.
 - Caso actual: `project` contiene la fuente pública y las tecnologías; `case*` en `copy.ts` contiene su narrativa. Para varios casos, convertirlo en un array tipado y reutilizar el artículo de `Portfolio.astro`. Añadir contexto, contribución y resultado sustentados por una fuente aprobada. No publicar datos privados ni tarjetas vacías.
 - Certificaciones: `certification` contiene la obtenida y su enlace real. Para varias, convertir en array y recorrerlo en la sección de formación. Las que estén en preparación deben tener un estado separado y etiquetarse explícitamente en ambos idiomas.
-- Email/CV: están vacíos hasta recibir aprobación. Para publicarlos, completar los campos y añadir el enlace correspondiente en contacto. El CV debe ser un archivo aprobado en `public/`, sin datos personales no autorizados.
+- Email/CV: se configuran en `profile.email` y `profile.cv`. Para actualizar el CV, sustituir `public/CV_Sergio_Cornejo.pdf` por la nueva versión aprobada y mantener el mismo nombre para conservar el enlace.
 
 Tras editar, revisar ambas rutas y ejecutar los comandos de calidad. Verificar fechas y estado del puesto actual antes de cada actualización profesional.
 
@@ -77,7 +77,3 @@ Tras editar, revisar ambas rutas y ejecutar los comandos de calidad. Verificar f
 ## Diseño y accesibilidad
 
 Tema oscuro con matices violeta y turquesa, presentación a dos columnas, diagrama de plataforma ilustrativo en el stack, timeline y caso técnico. HTML semántico, foco visible, enlace de salto, navegación por teclado, disclosures nativos y soporte para reducción de movimiento. El contenido principal funciona sin JavaScript; menú y diagrama necesitan JS para su interacción. No se usan analítica ni formularios de contacto.
-
-## Pendiente
-
-Confirmación opcional de email, CV y nuevas herramientas/proyectos. No se afirma certificación CKA, niveles de dominio ni métricas no verificadas.

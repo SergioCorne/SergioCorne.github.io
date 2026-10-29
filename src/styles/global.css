@@ -2110,3 +2110,22 @@ html {
   line-height: 1.8;
   color: var(--muted);
 }
+
+.contact-cv {
+  margin-left: 12px;
+  color: #e0cfff;
+  border-color: #a387cb;
+}
+.contact-email {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 22px;
+  overflow-wrap: anywhere;
+  color: #ded1ee;
+}
+@media (max-width: 800px) {
+  .contact-cv {
+    margin: 12px 0 0;
+  }
+}

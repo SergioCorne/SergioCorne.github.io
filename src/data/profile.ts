@@ -6,9 +6,8 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/sergio-cornejo-045131277/",
   github: "https://github.com/SergioCorne",
   site: "https://sergiocorne.github.io",
-  // Only add an email or CV after Sergio approves it for public use.
-  email: "",
-  cv: "",
+  email: "sergiocp0708@gmail.com",
+  cv: "/CV_Sergio_Cornejo.pdf",
 };
 export const experience = [
   {
