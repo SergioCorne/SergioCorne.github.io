@@ -2129,3 +2129,13 @@ html {
     margin: 12px 0 0;
   }
 }
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+.contact-actions .contact-cv {
+  margin: 0;
+}

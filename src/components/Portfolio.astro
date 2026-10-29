@@ -449,20 +449,26 @@ const schema = {
             </h2>
             <div>
               <p>{t.contactText}</p>
-              <a class="button primary" href={profile.linkedin}>
-                {t.linkedin}
-                <span aria-hidden="true">↗</span>
-              </a>
-              {profile.cv && (
-                <a
-                  class="button outlined contact-cv"
-                  href={profile.cv}
-                  download="CV_Sergio_Cornejo.pdf"
-                >
-                  {t.downloadCv}
-                  <span aria-hidden="true">↓</span>
+              <div class="contact-actions">
+                <a class="button primary" href={profile.linkedin}>
+                  {t.linkedin}
+                  <span aria-hidden="true">↗</span>
                 </a>
-              )}
+                {profile.cv && (
+                  <a
+                    class="button outlined contact-cv"
+                    href={profile.cv}
+                    download="CV_Sergio_Cornejo.pdf"
+                  >
+                    {t.downloadCv}
+                    <span aria-hidden="true">↓</span>
+                  </a>
+                )}
+                <a class="button outlined contact-cv" href={profile.github}>
+                  {t.github}
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
               {profile.email && (
                 <a
                   class="contact-email text-link"
@@ -472,10 +478,6 @@ const schema = {
                   <span aria-hidden="true">↗</span>
                 </a>
               )}
-              <a class="text-link github-contact" href={profile.github}>
-                {t.github}
-                <span aria-hidden="true">↗</span>
-              </a>
             </div>
           </div>
           <div class="contact-sign mono">
